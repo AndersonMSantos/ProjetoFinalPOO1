@@ -1,8 +1,11 @@
-from endereco import *
-class EMPRESA(ENDERECO):
+from endereco import ENDERECOE
+class EMPRESA(ENDERECOE):
+    """TEL: 8 digitos!
+        CEL: 9 digitos! (criar)
+    """
 
-    def __init__(self, TelE):
-        ENDERECO.__init__(self, Rua, Num, Comp, Bair, CEP, Cid, Est)
+    def __init__(self,RuaE, NumE, CompE, BairE, CEPE, CidE, EstE, TelE):
+        ENDERECOE.__init__(self, RuaE, NumE, CompE, BairE, CEPE, CidE, EstE)
         self.__TelefoneEmp = TelE
 
     def setTelefoneEmpresa(self, TelE):
