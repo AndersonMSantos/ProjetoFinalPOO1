@@ -1,28 +1,27 @@
 from endereco import *
-
 class PESSOA(ENDERECO):
 
-    def __init__(self, Nome, Nasc, Civi, RG, CPF, Gen, Tel, Sang, RH):
+    def __init__(self, Rua, Num , Comp, Bair, CEP, Cid, Est, Nome, Nasc, Civi, RG, CPF, Gen, Tel, Sang, RH):
         ENDERECO.__init__(self, Rua, Num , Comp, Bair, CEP, Cid, Est)
-        self.__nome = Nome
-        self.__dataNas = Nasc
-        self.__estCiv = Civi
-        self.__rg = RG
-        self.__cpf = CPF
-        self.__genero = Gen
-        self.__telefone = Tel
-        self.__sangue = Sang
-        self.__rh = RH
+        self.__nome = Nome #!= VAZIO
+        self.__dataNas = Nasc #dataNas: !< 1900, !> 12 meses, !> 31 dias, NÃO dias, mês ou ano negativo, não pode ser 0/0/0,
+        self.__estCiv = Civi #!= VAZIO
+        self.__rg = RG #= 10 DIGITOS. NÃO NEGATIVO. DIFERENTE DE 00.000.000-00.
+        self.__cpf = CPF #= 11 DIGITOS. //.             //.
+        self.__genero = Gen #!= M/F. NÃO VAZIO
+        self.__telefone = Tel #NÃO 0000-0000. NÃO NEGATIVO.
+        self.__sangue = Sang #NÃO VAZIO (A, B, AB, O)
+        self.__rh = RH #NÃO VAZIO (+, -)
 
     def setNome(self, Nome):
         self.__nome = Nome
     def getNome(self):
-        return self.Nome
+        return self.__nome
 
     def setNascimento(self, Nasc):
         self.__dataNas = Nasc
     def getNascimento(self):
-        return self.Nasc
+        return self.__dataNas
 
     def setEstadoCivil(self, Civil):
         self.__estCiv = Civil
@@ -32,7 +31,7 @@ class PESSOA(ENDERECO):
     def setRG(self, RG):
         self.__rg = RG
     def getRG(self):
-        return self.__RG
+        return self.__rg
 
     def setCPF(self, CPF):
         self.__cpf = CPF

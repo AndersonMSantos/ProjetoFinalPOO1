@@ -1,7 +1,7 @@
 from pessoa import *
 class MEDICO(PESSOA):
-    def __init__(self, Esp, Ala):
-        PESSOA.__init__(self, Nome, Nasc, Civi, RG, CPF, Gen, Tel)
+    def __init__(self, Rua, Num , Comp, Bair, CEP, Cid, Est, Nome, Nasc, Civi, RG, CPF, Gen, Tel, Sang, RH, Esp, Ala):
+        PESSOA.__init__(self, Rua, Num , Comp, Bair, CEP, Cid, Est, Nome, Nasc, Civi, RG, CPF, Gen, Tel, Sang, RH)
         self.__especialidade = Esp
         self.__ala = Ala
 
